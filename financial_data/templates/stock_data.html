@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Data</title>
+</head>
+<body>
+    <h1>Stock Price Data</h1>
+    <ul>
+        {% for stock in stock_data %}
+        <li>
+            Symbol: {{ stock.stock_symbol }} <br>
+            Date: {{ stock.time_stamp }} <br>
+            Open: {{ stock.open_price }} <br>
+            High: {{ stock.high_price }} <br>
+            Low: {{ stock.low_price }} <br>
+            Close: {{ stock.close_price }} <br>
+            Volume: {{ stock.volume }}
+        </li>
+        <hr>
+        {% empty %}
+        <li>No stock data available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

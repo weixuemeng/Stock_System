@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted Stock Prices</title>
+</head>
+<body>
+    <h1>Predicted Stock Prices for the Next 30 Days</h1>
+
+    {% if predicted_stock_prices %}
+        <ul>
+            {% for day, price in predicted_stock_prices %}
+                <li>Day {{ day }}: Predicted Stock Price: ${{ price|floatformat:2 }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No predictions available. Please make a prediction.</p>
+    {% endif %}
+</body>
+</html>
